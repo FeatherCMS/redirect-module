@@ -8,8 +8,8 @@
 import Foundation
 import ViperKit
 
-@_cdecl("createModule")
-public func createModule() -> UnsafeMutableRawPointer {
+@_cdecl("createRedirectModule")
+public func createRedirectModule() -> UnsafeMutableRawPointer {
     return Unmanaged.passRetained(RedirectBuilder()).toOpaque()
 }
 

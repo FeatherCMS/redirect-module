@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "RedirectModule", targets: ["RedirectModule"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/binarybirds/feather-core", from: "1.0.0"),
+        .package(url: "https://github.com/binarybirds/feather-core", .branch("main")),
         
     ],
     targets: [

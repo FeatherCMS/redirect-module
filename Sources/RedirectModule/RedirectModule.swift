@@ -20,6 +20,13 @@ final class RedirectModule: ViperModule {
             RedirectMigration_v1_0_0(),
         ]
     }
+
+    var viewsUrl: URL? {
+        Bundle.module.bundleURL
+            .appendingPathComponent("Contents")
+            .appendingPathComponent("Resources")
+            .appendingPathComponent("Views")
+    }
     
     // MARK: - hook functions
     
