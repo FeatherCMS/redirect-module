@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  RedirectModuleTests.swift
+//  RedirectModule
 //
 //  Created by Tibor Bodecs on 2020. 08. 23..
 //

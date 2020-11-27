@@ -1,12 +1,11 @@
 //
-//  File.swift
-//  
+//  RedirectBuilder.swift
+//  RedirectModule
 //
 //  Created by Tibor Bodecs on 2020. 08. 23..
 //
 
-import Foundation
-import ViperKit
+import FeatherCore
 
 @_cdecl("createRedirectModule")
 public func createRedirectModule() -> UnsafeMutableRawPointer {
