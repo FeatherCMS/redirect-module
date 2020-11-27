@@ -48,7 +48,7 @@ final class RedirectModule: ViperModule {
         ]
     }
 
-    func frontendPageHook(args: HookArguments) -> EventLoopFuture<Response?>? {
+    func frontendPageHook(args: HookArguments) -> EventLoopFuture<Response?> {
         let req = args["req"] as! Request
         return RedirectModel
             .query(on: req.db)
