@@ -21,10 +21,7 @@ final class RedirectModule: ViperModule {
     }
 
     static var bundleUrl: URL? {
-        Bundle.module.bundleURL
-            .appendingPathComponent("Contents")
-            .appendingPathComponent("Resources")
-            .appendingPathComponent("Bundle")
+        Bundle.module.resourceURL?.appendingPathComponent("Bundle")
     }
    
     func boot(_ app: Application) throws {
