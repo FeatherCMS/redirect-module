@@ -12,7 +12,8 @@ struct RedirectAdminController: ViperAdminViewController {
 
     typealias Module = RedirectModule
     typealias Model = RedirectModel
-    typealias EditForm = RedirectEditForm
+    typealias CreateForm = RedirectEditForm
+    typealias UpdateForm = RedirectEditForm
     
     var listAllowedOrders: [FieldKey] = [
         Model.FieldKeys.source,
@@ -20,8 +21,8 @@ struct RedirectAdminController: ViperAdminViewController {
         Model.FieldKeys.statusCode,
     ]
 
-    func searchList(using qb: QueryBuilder<Model>, for searchTerm: String) {
-        qb.filter(\.$source ~~ searchTerm)
-        qb.filter(\.$destination ~~ searchTerm)
+    func listQuery(search: String, queryBuilder: QueryBuilder<RedirectModel>, req: Request) {
+        queryBuilder.filter(\.$source ~~ search)
+        queryBuilder.filter(\.$destination ~~ search)
     }
 }
