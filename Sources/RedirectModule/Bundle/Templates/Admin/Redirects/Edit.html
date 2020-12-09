@@ -1,3 +1,15 @@
+#let(form = [
+    "id": formId,
+    "token": formToken,
+    "key": "redirect",
+    "modelId": modelId,
+    "list": [
+        "title": "Redirects",
+        "url": "/admin/redirect/redirects/"
+    ]
+])
+
+
 #define(fields):
     #var(field = nil)
 
@@ -11,11 +23,4 @@
     #inline("Admin/Fields/Selection")
 
 #enddefine
-#let(form = [
-    "list": "redirects",
-    "id": formId,
-    "token": formToken,
-    "modelId": fields.modelId,
-    "key": "redirect"
-])
 #inline("Admin/Form")

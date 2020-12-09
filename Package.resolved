@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/binarybirds/feather-core",
         "state": {
           "branch": null,
-          "revision": "3c3c424264a23f1216b903d7aeaec70109639ec4",
-          "version": "1.0.0-beta.25"
+          "revision": "ab65070bff1dfce64981a210ffa4ddd8e3aceafd",
+          "version": "1.0.0-beta.26.1"
         }
       },
       {
@@ -62,6 +62,15 @@
           "branch": null,
           "revision": "b6cd7b93ef45b767041efeb83571457658c4acf7",
           "version": "1.10.1"
+        }
+      },
+      {
+        "package": "fluent-sqlite-driver",
+        "repositoryURL": "https://github.com/vapor/fluent-sqlite-driver",
+        "state": {
+          "branch": null,
+          "revision": "6f29f6f182c812075f09c7575c18ac5535c26824",
+          "version": "4.0.1"
         }
       },
       {
@@ -92,6 +101,15 @@
         }
       },
       {
+        "package": "leaf-foundation",
+        "repositoryURL": "https://github.com/binarybirds/leaf-foundation",
+        "state": {
+          "branch": null,
+          "revision": "2cf2f6ec0822514d5177053f15960771fbc971ee",
+          "version": "1.0.0-beta.5"
+        }
+      },
+      {
         "package": "leaf-kit",
         "repositoryURL": "https://github.com/vapor/leaf-kit",
         "state": {
@@ -119,6 +137,15 @@
         }
       },
       {
+        "package": "liquid-local-driver",
+        "repositoryURL": "https://github.com/binarybirds/liquid-local-driver",
+        "state": {
+          "branch": null,
+          "revision": "83b74c43f6445e7feed666139ada23b28719b920",
+          "version": "1.2.0-beta.8"
+        }
+      },
+      {
         "package": "routing-kit",
         "repositoryURL": "https://github.com/vapor/routing-kit.git",
         "state": {
@@ -134,6 +161,24 @@
           "branch": null,
           "revision": "ea9928b7f4a801b175a00b982034d9c54ecb6167",
           "version": "3.7.0"
+        }
+      },
+      {
+        "package": "sqlite-kit",
+        "repositoryURL": "https://github.com/vapor/sqlite-kit.git",
+        "state": {
+          "branch": null,
+          "revision": "2ec279b9c845cec254646834b66338551a024561",
+          "version": "4.0.2"
+        }
+      },
+      {
+        "package": "sqlite-nio",
+        "repositoryURL": "https://github.com/vapor/sqlite-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "6481dd0b01112d082dd7eb362782126e81964138",
+          "version": "1.1.0"
         }
       },
       {
