@@ -11,4 +11,3 @@ db.sqlite
 .env.testing
 Public
 Resources
-db.sqlite
