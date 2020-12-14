@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/binarybirds/feather-core",
         "state": {
           "branch": null,
-          "revision": "ab65070bff1dfce64981a210ffa4ddd8e3aceafd",
-          "version": "1.0.0-beta.26.1"
+          "revision": "244533c9172bd16663faec15720373aa7d4ae43e",
+          "version": "1.0.0-beta.29.1"
         }
       },
       {
@@ -267,8 +267,8 @@
         "repositoryURL": "https://github.com/vapor/vapor",
         "state": {
           "branch": null,
-          "revision": "2b222a632deb580cfd5122f46481df3a69ff99f1",
-          "version": "4.36.0"
+          "revision": "5148f02e42149f73f6616452062cf96b64afbda6",
+          "version": "4.36.2"
         }
       },
       {
@@ -276,8 +276,8 @@
         "repositoryURL": "https://github.com/binarybirds/view-kit",
         "state": {
           "branch": null,
-          "revision": "fc346b5989df507af9339f79aadf563f25993dc1",
-          "version": "1.3.0-beta.27"
+          "revision": "2e7a0384d8694923e59f3d7ba66344a47c2b8c4f",
+          "version": "1.3.0-beta.28"
         }
       },
       {

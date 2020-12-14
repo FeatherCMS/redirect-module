@@ -10,7 +10,9 @@ import FluentSQLiteDriver
 import LiquidLocalDriver
 import RedirectModule
 
-let feather = try Feather()
+var env = try Environment.detect()
+try LoggingSystem.bootstrap(from: &env)
+let feather = try Feather(env: env)
 defer { feather.stop() }
 
 try feather.configure(database: .sqlite(.file("db.sqlite")),
