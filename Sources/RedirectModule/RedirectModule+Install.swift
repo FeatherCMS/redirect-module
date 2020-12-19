@@ -10,9 +10,7 @@ import FeatherCore
 extension RedirectModule {
 
     func userPermissionInstallHook(args: HookArguments) -> [[String: Any]] {
-        [
-            ["key": "redirect", "name": "Redirect module"],
-        ] +
+        RedirectModule.permissions + 
         RedirectModel.permissions
     }
 }

@@ -37,10 +37,12 @@ final class RedirectModule: ViperModule {
         [
             "name": "Redirect",
             "icon": "arrow-right",
+            "permission": "redirect.module.access",
             "items": LeafData.array([
                 [
                     "label": "Redirects",
                     "url": "/admin/redirect/redirects/",
+                    "permission": "redirect.redirects.list",
                 ],
             ])
         ]
