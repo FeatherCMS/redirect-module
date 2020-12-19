@@ -8,7 +8,17 @@
 import FeatherCore
 import FluentSQLiteDriver
 import LiquidLocalDriver
+
+import SystemModule
+import UserModule
+import ApiModule
+import AdminModule
+import FrontendModule
+
 import RedirectModule
+
+/// setup metadata delegate object
+Feather.metadataDelegate = FrontendMetadataDelegate()
 
 var env = try Environment.detect()
 try LoggingSystem.bootstrap(from: &env)
@@ -19,5 +29,16 @@ try feather.configure(database: .sqlite(.file("db.sqlite")),
                       databaseId: .sqlite,
                       fileStorage: .local(publicUrl: Application.baseUrl, publicPath: Application.Paths.public, workDirectory: "assets"),
                       fileStorageId: .local,
-                      modules: [RedirectBuilder()])
+                      modules: [
+                        SystemBuilder(),
+                        UserBuilder(),
+                        ApiBuilder(),
+                        AdminBuilder(),
+                        FrontendBuilder(),
+                        
+                        RedirectBuilder()
+                      ])
+if feather.app.isDebug {
+    try feather.reset(resourcesOnly: true)
+}
 try feather.start()
