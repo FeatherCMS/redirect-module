@@ -45,18 +45,6 @@ final class RedirectModule: ViperModule {
             ])
         ]
     }
-    
-    func userPermissionInstallHook(args: HookArguments) -> [[String: Any]] {
-        [
-            /// user
-            ["key": "redirect",                     "name": "Redirect module"],
-            /// menu menus
-            ["key": "redirect.redirects.list",      "name": "Redirect list"],
-            ["key": "redirect.redirects.create",    "name": "Redirect create"],
-            ["key": "redirect.redirects.update",    "name": "Redirect update"],
-            ["key": "redirect.redirects.delete",    "name": "Redirect delete"],
-        ]
-    }
 
     func frontendPageHook(args: HookArguments) -> EventLoopFuture<Response?> {
         let req = args["req"] as! Request
