@@ -54,13 +54,25 @@ tr {
     #for(item in list.items):
     <tr>
         <td class="td:left m:h:s td:compact:col2">
-            <a href="#($req.url.path)#(item.id)/">#(item.source)</a>
+            #if(UserHasPermission(table.key + ".get")):
+                <a href="#($req.url.path)#(item.id)/">#(item.source)</a>
+            #else:
+                #(item.source)
+            #endif
         </td>
         <td class="td:left td:compact:col2">
-            <a href="#($req.url.path)#(item.id)/">#(item.destination)</a>
+            #if(UserHasPermission(table.key + ".get")):
+                <a href="#($req.url.path)#(item.id)/">#(item.destination)</a>
+            #else:
+                #(item.destination)
+            #endif
         </td>
         <td class="td:left td:compact:col2 td:compact:separator">
-            <a href="#($req.url.path)#(item.id)/">#(item.statusCode)</a>
+            #if(UserHasPermission(table.key + ".get")):
+                <a href="#($req.url.path)#(item.id)/">#(item.statusCode)</a>
+            #else:
+                #(item.statusCode)
+            #endif
         </td>
         
         #if((table.edit ?? true) && UserHasPermission(table.key + ".update")):
