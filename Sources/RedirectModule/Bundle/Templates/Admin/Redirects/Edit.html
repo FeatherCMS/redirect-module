@@ -15,13 +15,13 @@
     #var(field = nil)
 
     #(field = ["id": "source", "more": "e.g.: /src/", "required": true, "data": fields.source])
-    #inline("Admin/Fields/Text")
+    #inline("Common/Fields/Text")
 
     #(field = ["id": "destination", "more": "e.g.: /dest/", "required": true, "data": fields.destination])
-    #inline("Admin/Fields/Text")
+    #inline("Common/Fields/Text")
 
     #(field = ["id": "statusCode", "label": "Status code", "data": fields.statusCode])
-    #inline("Admin/Fields/Selection")
+    #inline("Common/Fields/Selection")
 
 #enddefine
 #inline("Admin/Form")

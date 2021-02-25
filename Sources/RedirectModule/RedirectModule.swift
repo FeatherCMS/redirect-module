@@ -25,9 +25,12 @@ final class RedirectModule: ViperModule {
     }
    
     func boot(_ app: Application) throws {
-        app.hooks.register("admin", use: (router as! RedirectRouter).adminRoutesHook)
-        app.hooks.register("frontend-page", use: frontendPageHook)
+        /// routes
+        app.hooks.register("admin-routes", use: (router as! RedirectRouter).adminRoutesHook)
+        app.hooks.register("frontend-route", use: frontendRouteHook)
+        /// leaf
         app.hooks.register("leaf-admin-menu", use: leafAdminMenuHook)
+        /// permission
         app.hooks.register("user-permission-install", use: userPermissionInstallHook)
     }
 
@@ -48,7 +51,7 @@ final class RedirectModule: ViperModule {
         ]
     }
 
-    func frontendPageHook(args: HookArguments) -> EventLoopFuture<Response?> {
+    func frontendRouteHook(args: HookArguments) -> EventLoopFuture<Response?> {
         let req = args["req"] as! Request
         return RedirectModel
             .query(on: req.db)
