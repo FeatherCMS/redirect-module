@@ -36,12 +36,12 @@ final class RedirectModule: ViperModule {
 
     // MARK: - hooks
 
-    func leafAdminMenuHook(args: HookArguments) -> LeafDataRepresentable {
+    func leafAdminMenuHook(args: HookArguments) -> TemplateDataRepresentable {
         [
             "name": "Redirect",
             "icon": "arrow-right",
             "permission": "redirect.module.access",
-            "items": LeafData.array([
+            "items": TemplateData.array([
                 [
                     "label": "Redirects",
                     "url": "/admin/redirect/redirects/",

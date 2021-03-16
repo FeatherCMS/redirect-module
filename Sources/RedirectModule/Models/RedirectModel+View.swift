@@ -7,9 +7,9 @@
 
 import FeatherCore
 
-extension RedirectModel: LeafDataRepresentable {
+extension RedirectModel: TemplateDataRepresentable {
 
-    var leafData: LeafData {
+    var templateData: TemplateData {
         .dictionary([
             "id": id,
             "source": source,
