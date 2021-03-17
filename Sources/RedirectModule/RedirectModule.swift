@@ -28,15 +28,15 @@ final class RedirectModule: ViperModule {
         /// routes
         app.hooks.register("admin-routes", use: (router as! RedirectRouter).adminRoutesHook)
         app.hooks.register("frontend-route", use: frontendRouteHook)
-        /// leaf
-        app.hooks.register("leaf-admin-menu", use: leafAdminMenuHook)
+        /// template
+        app.hooks.register("template-admin-menu", use: templateAdminMenuHook)
         /// permission
         app.hooks.register("user-permission-install", use: userPermissionInstallHook)
     }
 
     // MARK: - hooks
 
-    func leafAdminMenuHook(args: HookArguments) -> TemplateDataRepresentable {
+    func templateAdminMenuHook(args: HookArguments) -> TemplateDataRepresentable {
         [
             "name": "Redirect",
             "icon": "arrow-right",
