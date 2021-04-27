@@ -12,9 +12,9 @@ public func createRedirectModule() -> UnsafeMutableRawPointer {
     return Unmanaged.passRetained(RedirectBuilder()).toOpaque()
 }
 
-public final class RedirectBuilder: ViperBuilder {
+public final class RedirectBuilder: FeatherModuleBuilder {
 
-    public override func build() -> ViperModule {
+    public override func build() -> FeatherModule {
         RedirectModule()
     }
 }

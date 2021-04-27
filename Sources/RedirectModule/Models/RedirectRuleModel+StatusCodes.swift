@@ -1,5 +1,5 @@
 //
-//  RedirectModel+StatusCodes.swift
+//  RedirectRuleModel+StatusCodes.swift
 //  RedirectModule
 //
 //  Created by Tibor Bodecs on 2020. 12. 09..
@@ -7,7 +7,7 @@
 
 import FeatherCore
 
-extension RedirectModel {
+extension RedirectRuleModel {
 
     static let defaultCode = 301
     static let validCodes = [301, 303, 307]

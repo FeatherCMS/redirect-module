@@ -4,11 +4,11 @@ run:
 	swift run Feather
 
 env:
-	echo 'BASE_URL="http://0.0.0.0:8080"' > .env.development
-	echo 'BASE_PATH="$(CUR_DIR)/"' >> .env.development
+	echo 'FEATHER_WORK_DIR="$(CUR_DIR)/"' > .env.development
+	echo 'FEATHER_HTTPS=false' >> .env.development
 	
 clean:
-	rm -rf ./db.sqlite ./Resources/ ./Public/
+	rm -rf ./Resources/ ./Public/
 
 test:
 	swift test --enable-test-discovery

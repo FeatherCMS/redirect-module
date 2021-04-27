@@ -6,42 +6,27 @@
 //
 
 import FeatherCore
-
-import CommonModule
-import SystemModule
-import UserModule
-import ApiModule
-import AdminModule
-import FrontendModule
-
 import RedirectModule
-
-/// setup metadata delegate object
-Feather.metadataDelegate = FrontendMetadataDelegate()
 
 var env = try Environment.detect()
 try LoggingSystem.bootstrap(from: &env)
-let feather = try Feather(env: env)
-defer { feather.stop() }
+let app = Application(env)
+defer { app.shutdown() }
 
-feather.useSQLiteDatabase()
-feather.useLocalFileStorage()
-feather.usePublicFileMiddleware()
+Feather.useSQLiteDatabase(app)
+Feather.useLocalFileStorage(app)
 
-try feather.configure([
-    CommonBuilder(),
-    SystemBuilder(),
-    UserBuilder(),
-    ApiBuilder(),
-    AdminBuilder(),
-    FrontendBuilder(),
-    
-    RedirectBuilder()
+app.feather.use([
+    RedirectBuilder().build()
 ])
 
-if feather.app.isDebug {
-    try feather.resetPublicFiles()
-//    try feather.copyTemplatesIfNeeded()
+if app.isDebug {
+    try Feather.resetPublicFiles(app)
+    try Feather.copyTemplatesIfNeeded(app)
 }
 
-try feather.start()
+
+try Feather.boot(app)
+
+try app.run()
+

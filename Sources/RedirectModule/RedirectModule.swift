@@ -7,53 +7,39 @@
 
 import FeatherCore
 
-final class RedirectModule: ViperModule {
+final class RedirectModule: FeatherModule {
 
-    static let name = "redirect"
-    var priority: Int { 2000 }
-
-    var router: ViperRouter? = RedirectRouter()
-
-    var migrations: [Migration] {
-        [
-            RedirectMigration_v1_0_0(),
-        ]
-    }
-
-    static var bundleUrl: URL? {
-        Bundle.module.resourceURL?.appendingPathComponent("Bundle")
-    }
-   
+    static let moduleKey = "redirect"
+       
     func boot(_ app: Application) throws {
+        app.migrations.add(RedirectMigration_v1_0_0())
         /// routes
-        app.hooks.register("admin-routes", use: (router as! RedirectRouter).adminRoutesHook)
-        app.hooks.register("frontend-route", use: frontendRouteHook)
+        let router = RedirectRouter()
+        try router.boot(routes: app.routes)
+        app.hooks.register(.adminRoutes, use: router.adminRoutesHook)
+        app.hooks.register(.apiRoutes, use: router.apiRoutesHook)
+        app.hooks.register(.apiAdminRoutes, use: router.apiAdminRoutesHook)
+        /// response
+        app.hooks.register(.response, use: responseHook)
         /// template
-        app.hooks.register("template-admin-menu", use: templateAdminMenuHook)
+        app.hooks.register(.adminMenu, use: adminMenuHook)
         /// permission
-        app.hooks.register("user-permission-install", use: userPermissionInstallHook)
+        app.hooks.register(.installPermissions, use: installPermissionsHook)
     }
 
     // MARK: - hooks
 
-    func templateAdminMenuHook(args: HookArguments) -> TemplateDataRepresentable {
-        [
-            "name": "Redirect",
-            "icon": "arrow-right",
-            "permission": "redirect.module.access",
-            "items": TemplateData.array([
-                [
-                    "label": "Redirects",
-                    "url": "/admin/redirect/redirects/",
-                    "permission": "redirect.redirects.list",
-                ],
-            ])
-        ]
+    func adminMenuHook(args: HookArguments) -> HookObjects.AdminMenu {
+        .init(key: "redirect",
+              item: .init(icon: "redirect", link: Self.adminLink, permission: Self.permission(for: .custom("admin")).identifier),
+              children: [
+                .init(link: RedirectRuleModel.adminLink, permission: RedirectRuleModel.permission(for: .list).identifier),
+              ])
     }
 
-    func frontendRouteHook(args: HookArguments) -> EventLoopFuture<Response?> {
-        let req = args["req"] as! Request
-        return RedirectModel
+    func responseHook(args: HookArguments) -> EventLoopFuture<Response?> {
+        let req = args.req
+        return RedirectRuleModel
             .query(on: req.db)
             .filter(\.$source == req.url.path)
             .first()
@@ -63,5 +49,13 @@ final class RedirectModule: ViperModule {
                 }
                 return req.redirect(to: model.destination, type: model.type)
             }
+    }
+    
+    func installPermissionsHook(args: HookArguments) -> [PermissionCreateObject] {
+        var permissions: [PermissionCreateObject] = [
+            RedirectModule.hookInstallPermission(for: .custom("admin"))
+        ]
+        permissions += RedirectRuleModel.hookInstallPermissions()
+        return permissions
     }
 }

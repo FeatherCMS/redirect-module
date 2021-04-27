@@ -7,14 +7,29 @@
 
 import FeatherCore
 
-struct RedirectRouter: ViperRouter {
+struct RedirectRouter: RouteCollection {
     
-    var adminController = RedirectAdminController()
-
+    var ruleController = RedirectRuleController()
+    
+    func boot(routes: RoutesBuilder) throws {
+        
+    }
+    
     func adminRoutesHook(args: HookArguments) {
-        let routes = args["routes"] as! RoutesBuilder
+        let adminRoutes = args.routes
+        
+        adminRoutes.get("redirect", use: SystemAdminMenuController(key: "redirect").moduleView)
 
-        let modulePath = routes.grouped(RedirectModule.pathComponent)
-        adminController.setupRoutes(on: modulePath, as: RedirectModel.pathComponent)
+        adminRoutes.register(ruleController)
+    }
+    
+    func apiRoutesHook(args: HookArguments) {
+//        let publicApiRoutes = args.routes
+    }
+    
+    func apiAdminRoutesHook(args: HookArguments) {
+        let apiRoutes = args.routes
+
+        apiRoutes.registerApi(ruleController)
     }
 }
