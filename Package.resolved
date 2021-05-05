@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/vapor/async-kit.git",
         "state": {
           "branch": null,
-          "revision": "5760c79afb8ebc24fd3251fdd9724af225fdf1f9",
-          "version": "1.3.0"
+          "revision": "c1de408100a2f2e4ab2ea06512e8635bc1a59144",
+          "version": "1.3.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/vapor/console-kit.git",
         "state": {
           "branch": null,
-          "revision": "08f36a30e0893e6a52fefbf1c2db4a6bc1288ba2",
-          "version": "4.2.5"
+          "revision": "cfe8bcd58f74ffecb4f536d8237de146b634ecd3",
+          "version": "4.2.6"
         }
       },
       {
@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/FeatherCMS/feather-core",
         "state": {
           "branch": "main",
-          "revision": "50e44e076ddd6e883fdee58b4631c3cbc61df6f9",
+          "revision": "ba262b2d8c25ed2dbb2157f4855df564eedd0761",
           "version": null
         }
       },
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "9d47c328bf83999968c12a3bc94ead1d706ad4a9",
-          "version": "1.11.0"
+          "revision": "b985e3e6e75843cfdc0c4daf75e50d0dae211202",
+          "version": "1.11.1"
         }
       },
       {
@@ -119,12 +119,21 @@
         }
       },
       {
+        "package": "spec",
+        "repositoryURL": "https://github.com/binarybirds/spec.git",
+        "state": {
+          "branch": null,
+          "revision": "aecab17649ac83133daa98e54620911773227946",
+          "version": "1.2.2"
+        }
+      },
+      {
         "package": "sql-kit",
         "repositoryURL": "https://github.com/vapor/sql-kit.git",
         "state": {
           "branch": null,
-          "revision": "2e1ffbfa5ec6c87f6c932ecebbc11c7a5bc0115d",
-          "version": "3.8.1"
+          "revision": "07f3fc3b9179fce604a0c1672eaf8502e66a4af4",
+          "version": "3.8.2"
         }
       },
       {
@@ -231,8 +240,8 @@
         "repositoryURL": "https://github.com/binarybirds/tau",
         "state": {
           "branch": null,
-          "revision": "935292e605b815833629ba31a82480a7c8b23217",
-          "version": "1.0.0"
+          "revision": "cd351776d6e7c6877f742e6f29d5707b442bcb1c",
+          "version": "1.0.1"
         }
       },
       {
@@ -240,8 +249,8 @@
         "repositoryURL": "https://github.com/binarybirds/tau-kit",
         "state": {
           "branch": null,
-          "revision": "7420424ab77aa8f876356df56223336be26927be",
-          "version": "1.1.2"
+          "revision": "c1b38ed81b235188276977b674ffe9c9532edb86",
+          "version": "1.1.4"
         }
       },
       {
@@ -249,8 +258,8 @@
         "repositoryURL": "https://github.com/vapor/vapor",
         "state": {
           "branch": null,
-          "revision": "5c3f1703cdce2cbced837d07aae6d1a897abf0b9",
-          "version": "4.44.1"
+          "revision": "07a105b295a0b191e69761feede58edb2ebeb580",
+          "version": "4.45.0"
         }
       },
       {

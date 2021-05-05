@@ -11,3 +11,5 @@ db.sqlite
 .env.testing
 /Public
 /Resources
+/Tests/Public
+/Tests/Resources

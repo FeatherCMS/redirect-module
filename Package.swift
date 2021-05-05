@@ -8,10 +8,10 @@ var deps: [Package.Dependency] = [
 ]
 
 var targets: [Target] = [
-    .target(name: "RedirectModuleApi"),
+    .target(name: "RedirectApi"),
     .target(name: "RedirectModule", dependencies: [
         .product(name: "FeatherCore", package: "feather-core"),
-        .target(name: "RedirectModuleApi"),
+        .target(name: "RedirectApi"),
     ],
     resources: [
         .copy("Bundle"),
@@ -34,6 +34,7 @@ if isLocalTestMode {
         ]),
         .testTarget(name: "RedirectModuleTests", dependencies: [
             .target(name: "RedirectModule"),
+            .product(name: "FeatherTest", package: "feather-core")
         ])
     ])
 }

@@ -6,7 +6,7 @@
 //
 
 import FeatherCore
-import RedirectModuleApi
+import RedirectApi
 
 extension RuleListObject: Content {}
 extension RuleGetObject: Content {}
@@ -24,37 +24,49 @@ struct RedirectRuleApi: FeatherApiRepresentable {
     typealias PatchObject = RulePatchObject
     
     func mapList(model: Model) -> ListObject {
-        .init(id: model.id!, source: model.source, destination: model.destination, statusCode: model.statusCode)
+        .init(id: model.id!,
+              source: model.source,
+              destination: model.destination,
+              statusCode: model.statusCode)
     }
 
     func mapGet(model: Model) -> GetObject {
-        .init(id: model.id!, source: model.source, destination: model.destination, statusCode: model.statusCode)
+        .init(id: model.id!,
+              source: model.source,
+              destination: model.destination,
+              statusCode: model.statusCode)
     }
     
     func mapCreate(_ req: Request, model: Model, input: CreateObject) -> EventLoopFuture<Void> {
+        model.source = input.source
+        model.destination = input.destination
+        model.statusCode = input.statusCode
         return req.eventLoop.future()
     }
         
     func mapUpdate(_ req: Request, model: Model, input: UpdateObject) -> EventLoopFuture<Void> {
+        model.source = input.source
+        model.destination = input.destination
+        model.statusCode = input.statusCode
         return req.eventLoop.future()
     }
 
     func mapPatch(_ req: Request, model: Model, input: PatchObject) -> EventLoopFuture<Void> {
+        model.source = input.source ?? model.source
+        model.destination = input.destination ?? model.destination
+        model.statusCode = input.statusCode ?? model.statusCode
         return req.eventLoop.future()
     }
     
-    func validateCreate(_ req: Request) -> EventLoopFuture<Bool> {
-        req.eventLoop.future(true)
+    func validators(optional: Bool) -> [AsyncValidator] {
+        [
+            KeyedContentValidator<String>.required("source", optional: optional),
+            KeyedContentValidator<String>.required("destination", optional: optional),
+            KeyedContentValidator<Int>.contains("statusCode", RedirectRuleModel.validCodes, optional: optional),
+            KeyedContentValidator<String>("source", "Source must be unique", optional: optional, nil) { value, req in
+                Model.isUniqueBy(\.$source == value, req: req)
+            }
+        ]
     }
-    
-    func validateUpdate(_ req: Request) -> EventLoopFuture<Bool> {
-        req.eventLoop.future(true)
-    }
-    
-    func validatePatch(_ req: Request) -> EventLoopFuture<Bool> {
-        req.eventLoop.future(true)
-    }
-
-    
 }
 
