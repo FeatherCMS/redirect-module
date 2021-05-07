@@ -12,13 +12,10 @@ final class RedirectModule: FeatherModule {
     static let moduleKey = "redirect"
        
     func boot(_ app: Application) throws {
-        app.migrations.add(RedirectMigration_v1_0_0())
+        app.migrations.add(RedirectMigration_v1())
         /// routes
         let router = RedirectRouter()
-        try router.boot(routes: app.routes)
-        app.hooks.register(.adminRoutes, use: router.adminRoutesHook)
-        app.hooks.register(.apiRoutes, use: router.apiRoutesHook)
-        app.hooks.register(.apiAdminRoutes, use: router.apiAdminRoutesHook)
+        try router.bootAndRegisterHooks(app)
         /// response
         app.hooks.register(.response, use: responseHook)
         /// template
@@ -31,7 +28,7 @@ final class RedirectModule: FeatherModule {
 
     func adminMenuHook(args: HookArguments) -> HookObjects.AdminMenu {
         .init(key: "redirect",
-              item: .init(icon: "redirect", link: Self.adminLink, permission: Self.permission(for: .custom("admin")).identifier),
+              item: .init(icon: "repeat", link: Self.adminLink, permission: Self.permission(for: .custom("admin")).identifier),
               children: [
                 .init(link: RedirectRuleModel.adminLink, permission: RedirectRuleModel.permission(for: .list).identifier),
               ])

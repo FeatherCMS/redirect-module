@@ -7,13 +7,9 @@
 
 import FeatherCore
 
-struct RedirectRouter: RouteCollection {
+struct RedirectRouter: FeatherRouter {
     
     var ruleController = RedirectRuleController()
-    
-    func boot(routes: RoutesBuilder) throws {
-        
-    }
     
     func adminRoutesHook(args: HookArguments) {
         let adminRoutes = args.routes
@@ -21,10 +17,6 @@ struct RedirectRouter: RouteCollection {
         adminRoutes.get("redirect", use: SystemAdminMenuController(key: "redirect").moduleView)
 
         adminRoutes.register(ruleController)
-    }
-    
-    func apiRoutesHook(args: HookArguments) {
-//        let publicApiRoutes = args.routes
     }
     
     func apiAdminRoutesHook(args: HookArguments) {

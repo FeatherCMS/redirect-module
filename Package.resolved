@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/FeatherCMS/feather-core",
         "state": {
           "branch": "main",
-          "revision": "ba262b2d8c25ed2dbb2157f4855df564eedd0761",
+          "revision": "ec008f2996317c65d0b941f1f4ff6e7e1895f8da",
           "version": null
         }
       },
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "21782f3bdc9581148d38d0ccaab6ec952ccda56b",
-          "version": "2.28.0"
+          "revision": "d161bf658780b209c185994528e7e24376cf7283",
+          "version": "2.29.0"
         }
       },
       {
@@ -222,8 +222,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
         "state": {
           "branch": null,
-          "revision": "3d576964a1ace80d2a3f8bab96cab03e5ee074dc",
-          "version": "2.12.0"
+          "revision": "b2f8f353262a554d7f6598c17775c1e28d8a46f1",
+          "version": "2.13.0"
         }
       },
       {
@@ -249,8 +249,8 @@
         "repositoryURL": "https://github.com/binarybirds/tau-kit",
         "state": {
           "branch": null,
-          "revision": "c1b38ed81b235188276977b674ffe9c9532edb86",
-          "version": "1.1.4"
+          "revision": "ab00f65e727de95f5cf195ad982cc57cb6bfcfaa",
+          "version": "1.1.6"
         }
       },
       {
@@ -258,8 +258,8 @@
         "repositoryURL": "https://github.com/vapor/vapor",
         "state": {
           "branch": null,
-          "revision": "07a105b295a0b191e69761feede58edb2ebeb580",
-          "version": "4.45.0"
+          "revision": "ea60bf2ee23379d295d3262409cdf7f1a2428ed4",
+          "version": "4.45.1"
         }
       },
       {
