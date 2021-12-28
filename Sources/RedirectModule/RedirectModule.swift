@@ -29,8 +29,15 @@ struct RedirectModule: FeatherModule {
         app.hooks.register(.apiRoutes, use: router.apiRoutesHook)
         app.hooks.register(.adminWidgets, use: adminWidgetsHook)
         app.hooks.registerAsync(.response, use: responseHook)
+        app.hooks.register(.installUserPermissions, use: installUserPermissionsHook)
     }
 
+    func installUserPermissionsHook(args: HookArguments) -> [User.Permission.Create] {
+        var permissions = Redirect.availablePermissions()
+        permissions += Redirect.Rule.availablePermissions()
+        return permissions.map { .init($0) }
+    }
+    
     func adminWidgetsHook(args: HookArguments) -> [TemplateRepresentable] {
         if args.req.checkPermission(Redirect.permission(for: .detail)) {
             return [
