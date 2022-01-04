@@ -12,12 +12,14 @@ struct RedirectRuleApiController: ApiController {
     typealias ApiModel = Redirect.Rule
     typealias DatabaseModel = RedirectRuleModel
     
-    func listOutput(_ req: Request, _ model: DatabaseModel) async throws -> Redirect.Rule.List {
-        .init(id: model.uuid,
-              source: model.source,
-              destination: model.destination,
-              statusCode: model.statusCode,
-              notes: model.notes)
+    func listOutput(_ req: Request, _ models: [DatabaseModel]) async throws -> [Redirect.Rule.List] {
+        models.map { model in
+            .init(id: model.uuid,
+                  source: model.source,
+                  destination: model.destination,
+                  statusCode: model.statusCode,
+                  notes: model.notes)
+        }
     }
     
     func detailOutput(_ req: Request, _ model: DatabaseModel) async throws -> Redirect.Rule.List {
