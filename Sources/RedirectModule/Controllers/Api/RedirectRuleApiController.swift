@@ -56,7 +56,7 @@ struct RedirectRuleApiController: ApiController {
             KeyedContentValidator<String>.required("source", optional: optional),
             KeyedContentValidator<String>.required("destination", optional: optional),
             KeyedContentValidator<Int>.contains("statusCode", Redirect.Rule.StatusCode.allCases.map(\.rawValue), optional: optional),
-            KeyedContentValidator<String>("source", "Source must be unique", optional: optional) { value, req in
+            KeyedContentValidator<String>("source", "Source must be unique", optional: optional) { req, value in
                 try await DatabaseModel.isUnique(req, \.$source == value, Redirect.Rule.getIdParameter(req))
             }
         ]

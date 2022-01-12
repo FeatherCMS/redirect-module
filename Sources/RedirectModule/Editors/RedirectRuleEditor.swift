@@ -47,7 +47,7 @@ struct RedirectRuleEditor: FeatherModelEditor {
                 $0.output.context.value = String(Redirect.Rule.defaultStatusCode.rawValue)
             }
             .validators {
-                FormFieldValidator($1, "Invalid status") { field, _ in
+                FormFieldValidator($1, "Invalid status") { _, field in
                     guard let value = Int(field.input) else {
                         return false
                     }
