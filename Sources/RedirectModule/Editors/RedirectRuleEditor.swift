@@ -7,15 +7,15 @@
 
 struct RedirectRuleEditor: FeatherModelEditor {    
     let model: RedirectRuleModel
-    let form: FeatherForm
+    let form: AbstractForm
 
-    init(model: RedirectRuleModel, form: FeatherForm) {
+    init(model: RedirectRuleModel, form: AbstractForm) {
         self.model = model
         self.form = form
     }
 
-    @FormComponentBuilder
-    var formFields: [FormComponent] {
+    @FormFieldBuilder
+    var formFields: [FormField] {
         
         InputField("source")
             .config {
