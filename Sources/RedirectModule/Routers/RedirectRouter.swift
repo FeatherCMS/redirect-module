@@ -14,9 +14,11 @@ struct RedirectRouter: FeatherRouter {
         ruleAdminController.setUpRoutes(args.routes)
         
         args.routes.get("redirect") { req -> Response in
-            let template = AdminModulePageTemplate(.init(title: "Redirect", message: "This module lets you configure redirect rules.", links: [
-                .init(label: "Rules", path: "/admin/redirect/rules/"),
-            ]))
+            let template = AdminModulePageTemplate(.init(title: "Redirect",
+                                                         message: "This module lets you configure redirect rules.",
+                                                         navigation: [
+                                                            .init(label: "Rules", path: "/admin/redirect/rules/"),
+                                                         ]))
             return req.templates.renderHtml(template)
         }
     }
