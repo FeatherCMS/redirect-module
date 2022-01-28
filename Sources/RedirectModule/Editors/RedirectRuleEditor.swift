@@ -15,8 +15,7 @@ struct RedirectRuleEditor: FeatherModelEditor {
     }
 
     @FormFieldBuilder
-    var formFields: [FormField] {
-        
+    func createFields(_ req: Request) -> [FormField] {
         InputField("source")
             .config {
                 $0.output.context.label.required = true
