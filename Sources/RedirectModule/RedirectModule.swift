@@ -38,10 +38,10 @@ struct RedirectModule: FeatherModule {
         return permissions.map { .init($0) }
     }
     
-    func adminWidgetsHook(args: HookArguments) -> [TemplateRepresentable] {
+    func adminWidgetsHook(args: HookArguments) -> [OrderedHookResult<TemplateRepresentable>] {
         if args.req.checkPermission(Redirect.permission(for: .detail)) {
             return [
-                RedirectAdminWidgetTemplate(),
+                .init(RedirectAdminWidgetTemplate(), order: 200),
             ]
         }
         return []
