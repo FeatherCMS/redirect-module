@@ -12,7 +12,7 @@ struct RedirectAdminWidgetTemplate: TemplateRepresentable {
     
     @TagBuilder
     func render(_ req: Request) -> Tag {
-        Svg.icon(.arrowRightCircle)
+        Svg.arrowRightCircle
         H2("Redirect")
         Ul {
             if req.checkPermission(Redirect.Rule.permission(for: .list)) {
