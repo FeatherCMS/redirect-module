@@ -5,6 +5,8 @@
 //  Created by Steve Tibbett on 2021-12-19
 //
 
+import Fluent
+
 struct RedirectMigrations {
 
     struct v1: AsyncMigration {

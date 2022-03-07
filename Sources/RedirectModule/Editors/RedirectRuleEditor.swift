@@ -5,6 +5,10 @@
 //  Created by Steve Tibbett on 2021-12-19
 //
 
+import Feather
+import Vapor
+import RedirectApi
+
 struct RedirectRuleEditor: FeatherModelEditor {    
     let model: RedirectRuleModel
     let form: AbstractForm

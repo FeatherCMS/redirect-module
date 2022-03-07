@@ -5,8 +5,11 @@
 //  Created by Steve Tibbett on 2021-12-19
 //
 
-@_exported import FeatherCore
-@_exported import RedirectApi
+import Vapor
+import Fluent
+import Feather
+import FeatherApi
+import RedirectApi
 
 public extension HookName {
 //    static let permission: HookName = "redirect"
@@ -27,21 +30,21 @@ struct RedirectModule: FeatherModule {
 
         app.hooks.register(.adminRoutes, use: router.adminRoutesHook)
         app.hooks.register(.apiRoutes, use: router.apiRoutesHook)
-        app.hooks.register(.adminWidgets, use: adminWidgetsHook)
+        app.hooks.register(.adminWidgets, use: adminWidgetsHook, priority: 200)
         app.hooks.registerAsync(.response, use: responseHook)
-        app.hooks.register(.installUserPermissions, use: installUserPermissionsHook)
+        app.hooks.register(.installPermissions, use: installUserPermissionsHook)
     }
 
-    func installUserPermissionsHook(args: HookArguments) -> [User.Permission.Create] {
+    func installUserPermissionsHook(args: HookArguments) -> [FeatherPermission.Create] {
         var permissions = Redirect.availablePermissions()
         permissions += Redirect.Rule.availablePermissions()
         return permissions.map { .init($0) }
     }
     
-    func adminWidgetsHook(args: HookArguments) -> [OrderedHookResult<TemplateRepresentable>] {
+    func adminWidgetsHook(args: HookArguments) -> [TemplateRepresentable] {
         if args.req.checkPermission(Redirect.permission(for: .detail)) {
             return [
-                .init(RedirectAdminWidgetTemplate(), order: 200),
+                RedirectAdminWidgetTemplate()
             ]
         }
         return []

@@ -5,6 +5,10 @@
 //  Created by Steve Tibbett on 2021-12-19
 //
 
+import Vapor
+import Feather
+import RedirectApi
+
 struct RedirectRouter: FeatherRouter {
  
     let ruleAdminController = RedirectRuleAdminController()
@@ -14,8 +18,8 @@ struct RedirectRouter: FeatherRouter {
         ruleAdminController.setUpRoutes(args.routes)
         
         args.routes.get(Redirect.pathKey.pathComponent) { req -> Response in
-            let template = AdminModulePageTemplate(.init(title: "Redirect",
-                                                         tag: RedirectAdminWidgetTemplate().render(req)))
+            let template = SystemAdminModulePageTemplate(.init(title: "Redirect",
+                                                               tag: RedirectAdminWidgetTemplate().render(req)))
             return req.templates.renderHtml(template)
         }
     }

@@ -5,6 +5,10 @@
 //  Created by Steve Tibbett on 2021-12-19..
 //
 
+import Vapor
+import Fluent
+import Feather
+
 final class RedirectRuleModel: FeatherDatabaseModel {
     typealias Module = RedirectModule
 

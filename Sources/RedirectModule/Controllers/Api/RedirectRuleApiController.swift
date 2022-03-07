@@ -5,6 +5,11 @@
 //  Created by Steve Tibbett on 2021-12-19
 //
 
+import Vapor
+import Fluent
+import Feather
+import RedirectApi
+
 extension Redirect.Rule.List: Content {}
 extension Redirect.Rule.Detail: Content {}
 
@@ -56,9 +61,9 @@ struct RedirectRuleApiController: ApiController {
             KeyedContentValidator<String>.required("source", optional: optional),
             KeyedContentValidator<String>.required("destination", optional: optional),
             KeyedContentValidator<Int>.contains("statusCode", Redirect.Rule.StatusCode.allCases.map(\.rawValue), optional: optional),
-            KeyedContentValidator<String>("source", "Source must be unique", optional: optional) { req, value in
-                try await DatabaseModel.isUnique(req, \.$source == value, Redirect.Rule.getIdParameter(req))
-            }
+//            KeyedContentValidator<String>("source", "Source must be unique", optional: optional) { req, value in
+//                try await DatabaseModel.isUnique(req, \.$source == value, Redirect.Rule.getIdParameter(req))
+//            }
         ]
     }
 }
