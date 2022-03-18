@@ -7,7 +7,7 @@
 
 import Feather
 import Vapor
-import RedirectApi
+import RedirectObjects
 
 struct RedirectRuleEditor: FeatherModelEditor {    
     let model: RedirectRuleModel

@@ -8,7 +8,7 @@
 import Vapor
 import Fluent
 import Feather
-import RedirectApi
+import RedirectObjects
 
 extension Redirect.Rule.List: Content {}
 extension Redirect.Rule.Detail: Content {}

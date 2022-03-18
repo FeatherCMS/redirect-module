@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/FeatherCMS/feather-core",
         "state": {
           "branch": "dev",
-          "revision": "0855d9a322e692c06cd03133ba4fb29dffd6ddc4",
+          "revision": "a5df6b3986431e33663d294d0dee84814fccbd14",
           "version": null
         }
       },
@@ -43,6 +43,15 @@
         "state": {
           "branch": "main",
           "revision": "2d1e6715ad6f6a810434f1306d5d94691d1338d7",
+          "version": null
+        }
+      },
+      {
+        "package": "feather-objects",
+        "repositoryURL": "https://github.com/FeatherCMS/feather-objects",
+        "state": {
+          "branch": "main",
+          "revision": "169386ce3bf664fa768186467e4aec1caaee0fcf",
           "version": null
         }
       },
@@ -60,8 +69,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "9c7fbdc931ef6afa2dcd45edf253d25cadbbd5fc",
-          "version": "1.22.0"
+          "revision": "19da0d91d0fa9a0cf93958d67823c0e94ef666f1",
+          "version": "1.23.0"
         }
       },
       {
@@ -110,11 +119,11 @@
         }
       },
       {
-        "package": "redirect-api",
-        "repositoryURL": "https://github.com/FeatherCMS/redirect-api",
+        "package": "redirect-objects",
+        "repositoryURL": "https://github.com/FeatherCMS/redirect-objects",
         "state": {
           "branch": "main",
-          "revision": "cf9ab3893c5e7d8f62f3a9eec6072be98ddf55fc",
+          "revision": "366d92331b4b22031997b90fcec425c2c7ab1a0f",
           "version": null
         }
       },
@@ -159,8 +168,8 @@
         "repositoryURL": "https://github.com/binarybirds/swift-html",
         "state": {
           "branch": null,
-          "revision": "b2620a6747fd664c892cfd20ff38d4c445bfa0d3",
-          "version": "1.6.8"
+          "revision": "e07678a77d296e66fa891a9d4d08acc4471d1783",
+          "version": "1.6.11"
         }
       },
       {
@@ -177,8 +186,8 @@
         "repositoryURL": "https://github.com/apple/swift-metrics.git",
         "state": {
           "branch": null,
-          "revision": "3edd2f57afc4e68e23c3e4956bc8b65ca6b5b2ff",
-          "version": "2.2.0"
+          "revision": "eadb828f878fed144387e3845866225bb7082c56",
+          "version": "2.3.0"
         }
       },
       {
@@ -204,8 +213,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio-http2.git",
         "state": {
           "branch": null,
-          "revision": "000ca94f9de92c95b9ac85d44600b7b0fe25a3e5",
-          "version": "1.19.2"
+          "revision": "ac2a5afce3dbb6795b4f78ec3f19726dc28f5617",
+          "version": "1.20.0"
         }
       },
       {
@@ -231,8 +240,8 @@
         "repositoryURL": "https://github.com/vapor/vapor",
         "state": {
           "branch": null,
-          "revision": "e0fd4f3d76469dd6a0efb2be5c0b2f96b7581187",
-          "version": "4.55.1"
+          "revision": "5861bf9e2cff2c4cb0dcfb0c15ecfaa8bc5630e0",
+          "version": "4.55.3"
         }
       },
       {

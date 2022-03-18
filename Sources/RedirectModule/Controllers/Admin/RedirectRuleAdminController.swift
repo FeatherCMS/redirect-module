@@ -8,7 +8,7 @@
 import Vapor
 import Fluent
 import Feather
-import RedirectApi
+import RedirectObjects
 
 struct RedirectRuleAdminController: AdminController {
     typealias ApiModel = Redirect.Rule

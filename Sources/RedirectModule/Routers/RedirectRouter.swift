@@ -7,7 +7,7 @@
 
 import Vapor
 import Feather
-import RedirectApi
+import RedirectObjects
 
 struct RedirectRouter: FeatherRouter {
  

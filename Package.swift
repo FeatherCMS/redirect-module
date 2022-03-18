@@ -11,12 +11,12 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/FeatherCMS/feather-core", .branch("dev")),
-        .package(url: "https://github.com/FeatherCMS/redirect-api", .branch("main")),
+        .package(url: "https://github.com/FeatherCMS/redirect-objects", .branch("main")),
     ],
     targets: [
         .target(name: "RedirectModule", dependencies: [
             .product(name: "Feather", package: "feather-core"),
-            .product(name: "RedirectApi", package: "redirect-api"),
+            .product(name: "RedirectObjects", package: "redirect-objects"),
         ],
         resources: [
 //            .copy("Bundle"),

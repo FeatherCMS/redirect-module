@@ -8,8 +8,8 @@
 import Vapor
 import Fluent
 import Feather
-import FeatherApi
-import RedirectApi
+import FeatherObjects
+import RedirectObjects
 
 public extension HookName {
 //    static let permission: HookName = "redirect"
