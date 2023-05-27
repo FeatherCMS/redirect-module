@@ -7,8 +7,11 @@
 
 import Vapor
 import Fluent
-import Feather
+import FeatherCore
+//import RedirectModule
 import RedirectObjects
+
+public typealias Redirect = RedirectObjects.Redirect
 
 extension Redirect.Rule.List: Content {}
 extension Redirect.Rule.Detail: Content {}

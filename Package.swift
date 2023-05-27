@@ -10,12 +10,14 @@ let package = Package(
         .library(name: "RedirectModule", targets: ["RedirectModule"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/FeatherCMS/feather-core", .branch("dev")),
-        .package(url: "https://github.com/FeatherCMS/redirect-objects", .branch("main")),
+		.package(path: "../feather-core"),
+		.package(path: "../redirect-objects"),
+//        .package(url: "https://github.com/FeatherCMS/feather-core", .branch("dev")),
+//        .package(url: "https://github.com/FeatherCMS/redirect-objects", .branch("main")),
     ],
     targets: [
         .target(name: "RedirectModule", dependencies: [
-            .product(name: "Feather", package: "feather-core"),
+            .product(name: "FeatherCore", package: "feather-core"),
             .product(name: "RedirectObjects", package: "redirect-objects"),
         ],
         resources: [
