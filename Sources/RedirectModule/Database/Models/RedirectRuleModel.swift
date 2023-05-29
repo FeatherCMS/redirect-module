@@ -7,7 +7,7 @@
 
 import Vapor
 import Fluent
-import Feather
+import FeatherCore
 
 final class RedirectRuleModel: FeatherDatabaseModel {
     typealias Module = RedirectModule
