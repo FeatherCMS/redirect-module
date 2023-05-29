@@ -6,7 +6,7 @@
 //
 
 import Vapor
-import Feather
+import FeatherCore
 import RedirectObjects
 import SwiftHtml
 import FeatherIcons

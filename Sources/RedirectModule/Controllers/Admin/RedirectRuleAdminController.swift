@@ -7,7 +7,7 @@
 
 import Vapor
 import Fluent
-import Feather
+import FeatherCore
 import RedirectObjects
 
 struct RedirectRuleAdminController: AdminController {
